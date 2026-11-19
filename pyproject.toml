@@ -1,0 +1,22 @@
+[project]
+name = "mle-github-actions-and-cicd"
+version = "0.1.0"
+requires-python = ">=3.13.17"
+dependencies = [
+    "click>=8.5.0",
+    "dvc>=3.67.1",
+    "mlflow>=3.16.1",
+    "pandas>=3.0.6",
+    "pyarrow>=25.0.1",
+    "scikit-learn>=1.9.1",
+    "xgboost>=3.4.1",
+]
+
+[dependency-groups]
+# MLflow records pip's version when packaging the model.
+dev = ["pip>=26.2.2"]
+
+[tool.uv]
+required-version = ">=0.13.5"
+# Apply certificate fixes without adding unused runtime packages.
+constraint-dependencies = ["certifi>=2026.10.19", "pip>=26.2.2"]
