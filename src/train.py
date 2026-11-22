@@ -69,6 +69,7 @@ def train_model(df):
         "rmse_train": root_mean_squared_error(y_train, y_pred_train),
         "rmse_test": root_mean_squared_error(y_test, y_pred_test),
         "rows_after_filtering": len(df_processed),
+        "rows_before_filtering": len(df),
     }
     return pipeline, metrics
 
@@ -115,6 +116,7 @@ def write_cml_metrics(metrics):
                 f"- RMSE on the train set: {metrics['rmse_train']:.4f}",
                 f"- RMSE on the test set: {metrics['rmse_test']:.4f}",
                 f"- Rows after filtering: {metrics['rows_after_filtering']}",
+                f"- Rows before filtering: {metrics['rows_before_filtering']}",
                 "",
             ]
         ),
