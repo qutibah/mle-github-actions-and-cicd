@@ -164,3 +164,4 @@ mlflow.db*
 
 .env.*
 !.env.example
+*.pdf
