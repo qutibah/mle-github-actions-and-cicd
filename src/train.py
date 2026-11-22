@@ -58,7 +58,7 @@ def train_model(df):
 
     pipeline = make_pipeline(
         DictVectorizer(),
-        xgb.XGBRegressor(n_estimators=100, random_state=42, n_jobs=-1),
+        xgb.XGBRegressor(n_estimators=200, random_state=42, n_jobs=-1),
     )
     pipeline.fit(X_train, y_train)
 
