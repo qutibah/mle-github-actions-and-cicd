@@ -88,13 +88,14 @@ def log_model(pipeline, metrics):
         mlflow.set_tags(
             {
                 "model": "xgboost pipeline",
-                "developer": "<your-name>",
+                "developer": "Qutibah-Hussein",
                 "dataset": "green-taxi",
                 "features": ",".join(FEATURES),
                 "target": TARGET,
             }
         )
         mlflow.log_metrics(metrics)
+        mlflow.log_params({"n_estimators": 200, "random_state": 42})
         mlflow.sklearn.log_model(
             pipeline,
             name="model",
